@@ -1,0 +1,14 @@
+{
+  "name": "ui-components",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "ellreka",
+  "license": "MIT",
+  "scripts": {
+    "dev": "start-storybook -p 6007 -s ./public"
+  },
+  "devDependencies": {
+    "@ellreka/configs": "^1.1.5",
+    "@storybook/react": "^6.0.28"
+  }
+}
