@@ -6,7 +6,8 @@
   "license": "MIT",
   "scripts": {
     "dev": "start-storybook -p 6007 -s ./public",
-    "build-css": "postcss src/style.css -o dist/style.css"
+    "build-css": "postcss src/style.css -o dist/style.css",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
     "@ellreka/configs": "1.1.5",
