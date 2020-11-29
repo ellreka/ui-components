@@ -9,12 +9,12 @@
     "build-css": "postcss src/style.css -o dist/style.css"
   },
   "devDependencies": {
-    "@ellreka/configs": "^1.1.5",
-    "@storybook/react": "^6.0.28",
-    "autoprefixer": "^10.0.2",
-    "css-loader": "^5.0.1",
-    "postcss-cli": "^8.2.0",
-    "postcss-loader": "^4.0.4",
-    "tailwindcss": "^1.9.6"
+    "@ellreka/configs": "1.1.5",
+    "@storybook/react": "6.0.28",
+    "autoprefixer": "10.0.2",
+    "css-loader": "5.0.1",
+    "postcss-cli": "8.2.0",
+    "postcss-loader": "4.0.4",
+    "tailwindcss": "1.9.6"
   }
 }
