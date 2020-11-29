@@ -15,7 +15,7 @@
     "autoprefixer": "10.0.2",
     "css-loader": "5.0.1",
     "postcss-cli": "8.2.0",
-    "postcss-loader": "4.0.4",
+    "postcss-loader": "4.1.0",
     "tailwindcss": "1.9.6"
   }
 }
