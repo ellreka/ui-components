@@ -1,63 +1,42 @@
 import React from 'react'
-import { CarouselProps } from './Carousel.interfaces'
-import { useCarousel } from './useCarousel'
+import { CarouselProps, CarouselItemProps } from './Carousel.interfaces'
+import { useCarouselContext } from './useCarousel'
 
-export function Carousel({}: CarouselProps) {
-  const loop = true
-  const show = 3
-  const auto = false
-  const { active, containerProps, itemProps, onNext, onPrev } = useCarousel({
-    length: 3,
-    loop,
-    show,
-    auto,
-    interval: 1000
-  })
-
+function Item({
+  children,
+  className = ''
+}: CarouselItemProps): React.ReactElement {
   return (
-    <>
-      <div className="" {...containerProps}>
-        {loop && (
-          <>
-            <div {...itemProps} className="bg-blue-500">
-              AAAα
-            </div>
-            <div {...itemProps} className="bg-blue-500">
-              BBBα
-            </div>
-            <div {...itemProps} className="bg-blue-500">
-              CCCα
-            </div>
-          </>
-        )}
-        {['AAA', 'BBB', 'CCC'].map((v) => (
-          <div key={v} {...itemProps} className="bg-red-500">
-            {v}
-          </div>
-        ))}
-        {['AAA1', 'BBB2', 'CCC3'].map((v) => (
-          <div key={v} {...itemProps} className="bg-red-500">
-            {v}
-          </div>
-        ))}
-        {loop && (
-          <>
-            <div {...itemProps} className="bg-blue-500">
-              AAAα
-            </div>
-            <div {...itemProps} className="bg-blue-500">
-              BBBα
-            </div>
-            <div {...itemProps} className="bg-blue-500">
-              CCCα
-            </div>
-          </>
-        )}
-      </div>
-      <div>
-        <button onClick={onPrev}>prev</button>
-        <button onClick={onNext}>next</button>
-      </div>
-    </>
+    <div className={className} style={{ flexShrink: 0, width: '100%' }}>
+      {children}
+    </div>
+  )
+}
+
+export function Carousel({ children, className }: CarouselProps) {
+  const slides = React.Children.toArray(children)
+  const length = slides.length
+  const { configs, containerProps } = useCarouselContext()
+  const beforeSlides = (): React.ReactNode[] => {
+    return slides.slice(length - configs.show, length)
+  }
+  const afterSlides = (): React.ReactNode[] => {
+    return slides.slice(0, configs.show + 1)
+  }
+  const mainSlides = (): React.ReactNode[] => {
+    if (configs.loop) {
+      return [...slides, ...slides]
+    } else {
+      return slides
+    }
+  }
+  return (
+    <div className={className} {...containerProps}>
+      {configs.loop && beforeSlides().map((v, i) => <Item key={i}>{v}</Item>)}
+      {mainSlides().map((slide, index) => (
+        <Item key={index}>{slide}</Item>
+      ))}
+      {configs.loop && afterSlides().map((v, i) => <Item key={i}>{v}</Item>)}
+    </div>
   )
 }

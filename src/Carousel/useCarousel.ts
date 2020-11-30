@@ -1,68 +1,14 @@
 import React from 'react'
+import { UseCarouselProps, UseCarouselReturn } from './Carousel.interfaces'
 
-interface Props {
-  /**
-   * ループさせるか
-   */
-  loop?: boolean
-  /**
-   * 何秒ごとにスライドさせるか
-   */
-  interval?: number
-  duration?: string
-  /**
-   * 自動でスライドさせるか
-   */
-  auto?: boolean
-  /**
-   * スライドの合計
-   */
-  length: number
-  /**
-   * アクティブなスライドの前後に必要なスライドの数
-   */
-  show?: number
-}
+export const CarouselContext = React.createContext<UseCarouselReturn | null>(
+  null
+)
 
-interface ContainerProps {
-  style: React.CSSProperties
-  /**
-   * スライドの移動が完了したら実行される関数
-   */
-  onTransitionEnd: () => void
-  onTouchStart: (event: React.TouchEvent) => void
-  onMouseDown: (event: React.MouseEvent) => void
-}
-
-interface ItemProps {
-  style: React.CSSProperties
-}
-
-interface UseCarousel {
-  /**
-   * 表示中のスライド
-   */
-  active: number
-  /**
-   * 表示中のスライドの位置
-   */
-  offset: number
-  /**
-   * コンテナー要素のprops
-   */
-  containerProps: ContainerProps
-  /**
-   * スライドのprops
-   */
-  itemProps: ItemProps
-  /**
-   * 次のスライドへ移動する関数
-   */
-  onNext: () => void
-  /**
-   * 前のスライドへ移動する関数
-   */
-  onPrev: () => void
+export function useCarouselContext(): UseCarouselReturn {
+  const context = React.useContext(CarouselContext)
+  if (context === null) throw new Error()
+  return context
 }
 
 export function useCarousel({
@@ -71,8 +17,8 @@ export function useCarousel({
   auto = false,
   length,
   show = 0,
-  duration = '1s'
-}: Props): UseCarousel {
+  swipe = true
+}: UseCarouselProps): UseCarouselReturn {
   const [active, setActive] = React.useState(0)
   const [offset, setOffset] = React.useState(0)
   const [diffX, setDiffX] = React.useState(0)
@@ -84,7 +30,7 @@ export function useCarousel({
     return {
       transform: `translateX(calc(-${translateX * 100}% + ${-diffX}px))`,
       transition: `${animating ? '' : 'none'}`,
-      transitionDuration: `${animating ? duration : '0'}`,
+      transitionDuration: `${animating ? '1s' : ''}`,
       display: 'flex'
     }
   }
@@ -151,9 +97,15 @@ export function useCarousel({
     window.addEventListener('touchend', onTouchEnd, eventOptions)
   }
 
-  React.useEffect(() => {
-    console.log({ active, offset })
-  }, [active, offset])
+  const containerProps = () => {
+    const defaultProps = {
+      style: containerStyle(),
+      onTransitionEnd
+    }
+    return swipe
+      ? Object.assign(defaultProps, { onTouchStart, onMouseDown })
+      : defaultProps
+  }
 
   React.useEffect(() => {
     if (animating) return
@@ -168,7 +120,6 @@ export function useCarousel({
     if (!auto) return
     if (animating) return
     const timer = setTimeout(() => {
-      console.log('next')
       onNext()
     }, interval)
     return () => {
@@ -196,16 +147,19 @@ export function useCarousel({
   return {
     active,
     offset,
-    containerProps: {
-      style: containerStyle(),
-      onTransitionEnd,
-      onTouchStart,
-      onMouseDown
-    },
+    containerProps: containerProps(),
     itemProps: {
       style: itemStyle
     },
     onNext,
-    onPrev
+    onPrev,
+    configs: {
+      loop,
+      interval,
+      auto,
+      length,
+      show,
+      swipe
+    }
   }
 }
