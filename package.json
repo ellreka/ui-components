@@ -1,5 +1,5 @@
 {
-  "name": "ui-components",
+  "name": "@ellreka/ui",
   "version": "1.0.0",
   "main": "index.js",
   "author": "ellreka",
@@ -7,7 +7,8 @@
   "scripts": {
     "dev": "start-storybook -p 6007 -s ./public",
     "build-css": "postcss src/style.css -o dist/style.css",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "gen": "hygen component new --name"
   },
   "devDependencies": {
     "@ellreka/configs": "1.1.5",
