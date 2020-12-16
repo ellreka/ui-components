@@ -4,7 +4,7 @@ import '../style.css'
 import clsx from 'clsx'
 
 import { Carousel } from './Carousel'
-import { CarouselContext, useCarousel } from './useCarousel'
+import { CarouselContext, useCarousel } from '../../hooks/Carousel'
 
 export default {
   title: 'Carousel'

@@ -4,6 +4,9 @@
   "main": "index.js",
   "author": "ellreka",
   "license": "MIT",
+  "packages": [
+    "packages/*"
+  ],
   "scripts": {
     "dev": "start-storybook -p 6007 -s ./public",
     "build-css": "postcss src/style.css -o dist/style.css",
@@ -16,6 +19,7 @@
     "autoprefixer": "10.0.2",
     "clsx": "^1.1.1",
     "css-loader": "5.0.1",
+    "lerna": "^3.22.1",
     "postcss-cli": "8.3.0",
     "postcss-loader": "4.0.4",
     "tailwindcss": "1.9.6"
