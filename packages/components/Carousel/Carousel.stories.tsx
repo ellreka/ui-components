@@ -1,6 +1,5 @@
 import React from 'react'
 import { Story } from '@storybook/react/types-6-0'
-import '../style.css'
 import clsx from 'clsx'
 
 import { Carousel } from './Carousel'

@@ -8,20 +8,29 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "start-storybook -p 6007 -s ./public",
-    "build-css": "postcss src/style.css -o dist/style.css",
+    "dev": "start-storybook -p 6007 --ci",
+    "build-css": "postcss packages/style.css -o dist/style.css",
     "build-storybook": "build-storybook",
     "gen": "hygen component new --name"
   },
   "devDependencies": {
     "@ellreka/configs": "1.1.5",
-    "@storybook/react": "6.0.28",
-    "autoprefixer": "10.0.2",
+    "@storybook/addon-a11y": "^6.1.11",
+    "@storybook/addon-essentials": "^6.1.11",
+    "@storybook/cli": "^6.1.11",
+    "@storybook/react": "6.1.11",
+    "@tailwindcss/postcss7-compat": "^2.0.2",
+    "@types/react": "^17.0.0",
+    "autoprefixer": "^9",
     "clsx": "^1.1.1",
     "css-loader": "5.0.1",
     "lerna": "^3.22.1",
-    "postcss-cli": "8.3.0",
-    "postcss-loader": "4.0.4",
-    "tailwindcss": "1.9.6"
+    "postcss": "^7",
+    "postcss-cli": "^8.3.1",
+    "postcss-loader": "^4.1.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
+    "typescript": "^4.1.3"
   }
 }

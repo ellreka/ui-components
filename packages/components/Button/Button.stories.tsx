@@ -1,15 +1,35 @@
 import React from 'react'
-import { Story } from '@storybook/react/types-6-0'
-import '../style.css'
+import { Story, Meta } from '@storybook/react/types-6-0'
 
 import { Button } from './Button'
 
 export default {
-  title: 'Button'
+  title: 'components/Button',
+  component: Button
+} as Meta
+
+const Template: Story<React.ComponentProps<typeof Button>> = (args) => {
+  return (
+    <>
+      <Button {...args} />
+      <Button {...args} disabled />
+    </>
+  )
 }
 
-const Template: Story<React.ComponentProps<typeof Button>> = () => {
-  return <Button />
+Template.args = {
+  disabled: false,
+  onClick: () => console.log('onClick')
 }
 
-export const Default = Template.bind({})
+export const Primary = Template.bind({})
+Primary.args = {
+  ...Template.args,
+  color: 'primary'
+}
+
+export const Secondary = Template.bind({})
+Secondary.args = {
+  ...Template.args,
+  color: 'secondary'
+}

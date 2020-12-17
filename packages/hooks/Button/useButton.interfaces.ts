@@ -1,5 +1,5 @@
 export interface useButtonProps {
-  
+  text: string
 }
 
 export interface useButtonReturn {
