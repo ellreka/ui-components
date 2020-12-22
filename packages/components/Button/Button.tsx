@@ -18,12 +18,12 @@ export function Button({
         color === 'primary'
     },
     {
-      'bg-secondary border-secondary text-black hover:bg-pink-300 focus:bg-pink-300 disabled:opacity-50':
+      'bg-secondary border-secondary text-black hover:bg-pink-300 focus:bg-pink-300 focus:ring-2 focus:ring-green-500 disabled:opacity-50':
         color === 'secondary'
     },
     'w-full py-1 px-3 text-center rounded-2xl shadow-xl',
     'transition duration-300 ease-in-out',
-    'focus:outline-none disabled:cursor-not-allowed disabled:pointer-events-none'
+    'focus:outline-none disabled:pointer-events-none'
   )
   return (
     <button

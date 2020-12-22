@@ -8,7 +8,7 @@ export function useButton({ text }: useButtonProps): useButtonReturn {
 
   const onBlur = () => setFocus(false)
 
-  const a11yProps = {
+  const buttonProps = {
     'aria-label': text,
     title: text
   }
