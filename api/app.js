@@ -1,19 +1,44 @@
-const express = require('express');
-const basicAuth = require('express-basic-auth');
+const readAuth = require('basic-auth')
+const safeCompare = require('safe-compare')
+const serveStatic = require('serve-static')
 
 /*
  *
  */
 
-const app = express();
+const auth = (req, res) =>
+  new Promise((resolve) => {
+    const credentials = readAuth(req)
+    const authorized =
+      credentials &&
+      safeCompare(credentials.name, 'admin') &&
+      safeCompare(credentials.pass, 'admin')
+    resolve(authorized)
+  })
 
-app.use('/', basicAuth({
-  challenge: true,
-  realm: 'vercel-basic-auth.node-express',
-  users: { 'admin': 'admin' },
-  unauthorizedResponse: 'Restricted area, please login (admin:admin).'
-}));
+const serveHandler = serveStatic(__dirname + '/storybook-static')
+const serve = (req, res, handle404) =>
+  new Promise(() => serveHandler(req, res, handle404))
 
-app.use(express.static(__dirname + '/storybook-static'));
+/*
+ *
+ */
 
-module.exports = app;
+const app = async (req, res) => {
+  console.log(req.url, req.url.startsWith('/'))
+  const authorized = await auth(req, res)
+  console.log({ authorized })
+  if (!authorized) {
+    res.writeHead(401, {
+      'WWW-Authenticate': 'Basic realm="vercel-basic-auth.node"'
+    })
+    return res.end('Restricted area, please login (admin:admin).')
+  }
+  // Serve files
+  return serve(req, res, () => {
+    res.statusCode = 404
+    res.end('404 Not Founduuuunnnti')
+  })
+}
+
+module.exports = app
