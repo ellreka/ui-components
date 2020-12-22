@@ -8,8 +8,6 @@
     "packages/*"
   ],
   "scripts": {
-    "dev": "start-storybook -p 6007 --ci",
-    "build-css": "postcss packages/style.css -o dist/style.css",
     "build-storybook": "build-storybook",
     "gen": "hygen component new --name"
   },
@@ -21,6 +19,7 @@
     "@storybook/react": "6.1.11",
     "@tailwindcss/postcss7-compat": "^2.0.2",
     "@types/react": "^17.0.0",
+    "@vercel/node": "^1.8.5",
     "autoprefixer": "^9",
     "clsx": "^1.1.1",
     "css-loader": "5.0.1",
@@ -35,9 +34,12 @@
   },
   "dependencies": {
     "basic-auth": "^2.0.1",
+    "express": "^4.17.1",
+    "express-basic-auth": "^1.2.0",
     "http": "^0.0.1-security",
     "http-proxy": "^1.18.1",
     "safe-compare": "^1.1.4",
+    "serve-static": "^1.14.1",
     "static-auth": "^2.0.0"
   }
 }

@@ -1,21 +1,19 @@
-const protect = require('static-auth')
-const safeCompare = require('safe-compare')
+const express = require('express');
+const basicAuth = require('express-basic-auth');
 
 /*
  *
  */
 
-const app = protect(
-  '/',
-  (username, password) =>
-    safeCompare(username, 'admin') && safeCompare(password, 'admin'),
-  {
-    directory: __dirname + '/storybook-static',
-    realm: 'vercel-basic-auth.node-static-auth',
-    onAuthFailed: (res) => {
-      res.end('Restricted area, please login (admin:admin).')
-    }
-  }
-)
+const app = express();
 
-module.exports = app
+app.use('/', basicAuth({
+  challenge: true,
+  realm: 'vercel-basic-auth.node-express',
+  users: { 'admin': 'admin' },
+  unauthorizedResponse: 'Restricted area, please login (admin:admin).'
+}));
+
+app.use(express.static(__dirname + '/storybook-static'));
+
+module.exports = app;
