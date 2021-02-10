@@ -23,7 +23,7 @@
     "@types/react": "17.0.0",
     "autoprefixer": "9.8.6",
     "clsx": "1.1.1",
-    "css-loader": "5.0.1",
+    "css-loader": "5.0.2",
     "lerna": "3.22.1",
     "postcss": "7.0.35",
     "postcss-cli": "8.3.1",
