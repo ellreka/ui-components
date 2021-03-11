@@ -14,7 +14,7 @@
     "gen": "hygen component new --name"
   },
   "devDependencies": {
-    "@ellreka/configs": "1.1.5",
+    "@ellreka/configs": "1.1.9",
     "@storybook/addon-a11y": "6.1.21",
     "@storybook/addon-essentials": "6.1.21",
     "@storybook/cli": "6.1.21",
