@@ -1,5 +1,5 @@
 import React from 'react'
-import { UseCarouselProps, UseCarouselReturn } from './useCarousel.interfaces'
+import { UseCarouselProps, UseCarouselReturn } from '.'
 
 export const CarouselContext = React.createContext<UseCarouselReturn | null>(
   null

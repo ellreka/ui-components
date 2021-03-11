@@ -1,12 +1,11 @@
 ---
-to: src/<%= Name %>/<%= Name %>.stories.tsx
+to: src/components/<%= Name %>/<%= Name %>.stories.tsx
 ---
 
 import React from 'react'
 import { Story } from '@storybook/react/types-6-0'
-import '../style.css'
 
-import { <%= Name %> } from './<%= Name %>'
+import { <%= Name %> } from '.'
 
 export default {
   title: '<%= Name %>'

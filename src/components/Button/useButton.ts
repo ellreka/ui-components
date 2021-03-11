@@ -1,5 +1,5 @@
 import React from 'react'
-import { useButtonProps, useButtonReturn } from './useButton.interfaces'
+import { useButtonProps, useButtonReturn } from '.'
 
 export function useButton({ text }: useButtonProps): useButtonReturn {
   const [focus, setFocus] = React.useState(false)

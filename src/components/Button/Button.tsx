@@ -1,6 +1,6 @@
 import React from 'react'
 import { ButtonProps } from './Button.interfaces'
-import { useButton } from '../../hooks/Button'
+import { useButton } from '.'
 import clsx from 'clsx'
 
 export function Button({

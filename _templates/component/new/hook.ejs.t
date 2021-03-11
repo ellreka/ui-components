@@ -1,8 +1,8 @@
 ---
-to: src/<%= Name %>/use<%= Name %>.ts
+to: src/components/<%= Name %>/use<%= Name %>.ts
 ---
 
-import { use<%= Name %>Props, use<%= Name %>Return } from './<%= Name %>.interfaces'
+import { use<%= Name %>Props, use<%= Name %>Return } from '.'
 
 export function use<%= Name %>({}: use<%= Name %>Props): use<%= Name %>Return {
   return {

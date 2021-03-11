@@ -1,10 +1,9 @@
 ---
-to: src/<%= Name %>/<%= Name %>.tsx
+to: src/components/<%= Name %>/<%= Name %>.tsx
 ---
 
 import React from 'react'
-import { <%= Name %>Props } from './<%= Name %>.interfaces'
-import { use<%= Name %> } from './use<%= Name %>'
+import { use<%= Name %>, <%= Name %>Props } from '.'
 
 export function <%= Name %>({}: <%= Name %>Props): React.ReactElement {
   return (

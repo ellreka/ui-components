@@ -2,8 +2,7 @@ import React from 'react'
 import { Story } from '@storybook/react/types-6-0'
 import clsx from 'clsx'
 
-import { Carousel } from './Carousel'
-import { CarouselContext, useCarousel } from '../../hooks/Carousel'
+import { CarouselContext, useCarousel, Carousel } from '.'
 
 export default {
   title: 'Carousel'

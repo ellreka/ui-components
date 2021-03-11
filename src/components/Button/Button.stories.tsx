@@ -1,10 +1,10 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react/types-6-0'
 
-import { Button } from './Button'
+import { Button } from '.'
 
 export default {
-  title: 'components/Button',
+  title: 'Button',
   component: Button
 } as Meta
 
