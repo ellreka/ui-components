@@ -4,17 +4,15 @@
   "main": "index.js",
   "author": "ellreka",
   "license": "MIT",
-  "packages": [
-    "packages/*"
-  ],
   "scripts": {
     "dev": "start-storybook -p 6007 --ci",
     "build-css": "postcss packages/style.css -o dist/style.css",
     "build-storybook": "build-storybook",
-    "gen": "hygen component new --name"
+    "gen": "hygen component new --name",
+    "lint": "eslint ./src/**/* -c ./.eslintrc.js --fix"
   },
   "devDependencies": {
-    "@ellreka/configs": "1.1.5",
+    "@ellreka/configs": "^1.1.9",
     "@storybook/addon-a11y": "6.1.21",
     "@storybook/addon-essentials": "6.1.21",
     "@storybook/cli": "6.1.21",
@@ -31,5 +29,9 @@
     "react-dom": "17.0.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "typescript": "4.2.3"
+  },
+  "dependencies": {
+    "eslint": "^7.21.0",
+    "prettier": "^2.2.1"
   }
 }

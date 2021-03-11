@@ -5,15 +5,14 @@ export interface RadioProps {
 }
 
 export interface RadioGroupProps {
+  children: React.ReactElement | React.ReactElement[]
   /**
    * デフォルトで選択された状態にするvalue
    */
   defaultValue?: string
-  value?: string
   /**
    * 別の値が選択されたときのコールバック関数
    */
   onChange: React.ChangeEventHandler<HTMLInputElement>
-  children: React.ReactElement | React.ReactElement[]
+  value?: string
 }
-

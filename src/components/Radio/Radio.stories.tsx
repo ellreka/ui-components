@@ -1,5 +1,5 @@
+// import { Story } from '@storybook/react/types-6-0'
 import React from 'react'
-import { Story } from '@storybook/react/types-6-0'
 
 import { Radio, RadioGroup } from '.'
 
@@ -7,7 +7,7 @@ export default {
   title: 'Radio'
 }
 
-const Template = () => {
+const Template = (): React.ReactElement => {
   const [active, setActive] = React.useState('B')
   return (
     <div>

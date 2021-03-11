@@ -1,20 +1,20 @@
 export interface UseCarouselProps {
   /**
-   * ループさせるか
+   * 自動でスライドさせるか
    */
-  loop?: boolean
+  auto?: boolean
   /**
    * 何秒ごとにスライドさせるか
    */
   interval?: number
   /**
-   * 自動でスライドさせるか
-   */
-  auto?: boolean
-  /**
    * スライドの合計
    */
   length: number
+  /**
+   * ループさせるか
+   */
+  loop?: boolean
   /**
    * アクティブなスライドの前後に必要なスライドの数
    */
@@ -26,13 +26,13 @@ export interface UseCarouselProps {
 }
 
 interface ContainerProps {
-  style: React.CSSProperties
+  onMouseDown?: (event: React.MouseEvent) => void
+  onTouchStart?: (event: React.TouchEvent) => void
   /**
    * スライドの移動が完了したら実行される関数
    */
   onTransitionEnd: () => void
-  onTouchStart?: (event: React.TouchEvent) => void
-  onMouseDown?: (event: React.MouseEvent) => void
+  style: React.CSSProperties
 }
 
 interface ItemProps {
@@ -44,10 +44,7 @@ export interface UseCarouselReturn {
    * 表示中のスライド
    */
   active: number
-  /**
-   * 表示中のスライドの位置
-   */
-  offset: number
+  configs: Required<UseCarouselProps>
   /**
    * コンテナー要素のprops
    */
@@ -57,6 +54,10 @@ export interface UseCarouselReturn {
    */
   itemProps: ItemProps
   /**
+   * 表示中のスライドの位置
+   */
+  offset: number
+  /**
    * 次のスライドへ移動する関数
    */
   onNext: () => void
@@ -64,5 +65,4 @@ export interface UseCarouselReturn {
    * 前のスライドへ移動する関数
    */
   onPrev: () => void
-  configs: Required<UseCarouselProps>
 }

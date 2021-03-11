@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { useButtonProps, useButtonReturn } from '.'
 
 export function useButton({ text }: useButtonProps): useButtonReturn {

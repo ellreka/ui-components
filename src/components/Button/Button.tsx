@@ -1,15 +1,16 @@
-import React from 'react'
-import { ButtonProps } from './Button.interfaces'
-import { useButton } from '.'
 import clsx from 'clsx'
+import React from 'react'
+
+import { useButton } from '.'
+import { ButtonProps } from './Button.interfaces'
 
 export function Button({
+  children,
   color = 'default',
   disabled = false,
-  onClick,
-  children
+  onClick
 }: ButtonProps): React.ReactElement {
-  const { onFocus, onBlur } = useButton({
+  const { onBlur, onFocus } = useButton({
     text: children
   })
   const buttonClassNames = clsx(
@@ -21,7 +22,7 @@ export function Button({
       'bg-secondary border-secondary text-black hover:bg-pink-300 focus:bg-pink-300 focus:ring-2 focus:ring-green-500 disabled:opacity-50':
         color === 'secondary'
     },
-    'w-full py-1 px-3 text-center rounded-2xl shadow-xl',
+    'px-3 py-1 w-full text-center rounded-2xl shadow-xl',
     'transition duration-300 ease-in-out',
     'focus:outline-none disabled:pointer-events-none'
   )

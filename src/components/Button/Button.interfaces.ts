@@ -1,4 +1,5 @@
 export interface ButtonProps {
+  children: string
   /**
    * 色を指定します
    */
@@ -11,5 +12,4 @@ export interface ButtonProps {
    * クリック時の関数
    */
   onClick: (event: React.MouseEvent) => void
-  children: string
 }

@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { UseCarouselProps, UseCarouselReturn } from '.'
 
 export const CarouselContext = React.createContext<UseCarouselReturn | null>(
@@ -12,10 +13,10 @@ export function useCarouselContext(): UseCarouselReturn {
 }
 
 export function useCarousel({
-  loop = false,
-  interval = 1000,
   auto = false,
+  interval = 1000,
   length,
+  loop = false,
   show = 0,
   swipe = true
 }: UseCarouselProps): UseCarouselReturn {
@@ -41,7 +42,7 @@ export function useCarousel({
     flexShrink: 0
   }
 
-  const onPrev = () => {
+  const onPrev = (): void => {
     if (animating) return
     if (!loop && active === 0) return
     setActive((old) => (old - 1 + length) % length)
@@ -49,7 +50,7 @@ export function useCarousel({
     setAnimating(true)
   }
 
-  const onNext = () => {
+  const onNext = (): void => {
     if (animating) return
     if (!loop && active === length - 1) return
     setActive((old) => (old + 1) % length)
@@ -57,7 +58,7 @@ export function useCarousel({
     setAnimating(true)
   }
 
-  const onTransitionEnd = () => {
+  const onTransitionEnd = (): void => {
     setAnimating(false)
   }
 
@@ -65,14 +66,14 @@ export function useCarousel({
     passive: true
   }
 
-  const onMouseDown = (event: React.MouseEvent) => {
+  const onMouseDown = (event: React.MouseEvent): void => {
     setMoving(true)
     const startX = event.clientX
-    const onMouseMove = (event: MouseEvent) => {
+    const onMouseMove = (event: MouseEvent): void => {
       const currentX = event.clientX
       setDiffX(startX - currentX)
     }
-    const onMouseUp = () => {
+    const onMouseUp = (): void => {
       setMoving(false)
       window.removeEventListener('mousemove', onMouseMove)
       window.removeEventListener('mouseup', onMouseUp)
@@ -81,14 +82,14 @@ export function useCarousel({
     window.addEventListener('mouseup', onMouseUp, eventOptions)
   }
 
-  const onTouchStart = (event: React.TouchEvent) => {
+  const onTouchStart = (event: React.TouchEvent): void => {
     setMoving(true)
     const startX = event.touches[0].clientX
-    const onTouchMove = (event: TouchEvent) => {
+    const onTouchMove = (event: TouchEvent): void => {
       const currentX = event.touches[0].clientX
       setDiffX(startX - currentX)
     }
-    const onTouchEnd = () => {
+    const onTouchEnd = (): void => {
       setMoving(false)
       window.removeEventListener('touchmove', onTouchMove)
       window.removeEventListener('touchend', onTouchEnd)
@@ -97,7 +98,7 @@ export function useCarousel({
     window.addEventListener('touchend', onTouchEnd, eventOptions)
   }
 
-  const containerProps = () => {
+  const containerProps = (): UseCarouselReturn['containerProps'] => {
     const defaultProps = {
       style: containerStyle(),
       onTransitionEnd

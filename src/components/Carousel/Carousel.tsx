@@ -1,5 +1,6 @@
 import React from 'react'
-import { CarouselProps, CarouselItemProps, useCarouselContext } from '.'
+
+import { CarouselItemProps, CarouselProps, useCarouselContext } from '.'
 
 function Item({
   children,

@@ -1,4 +1,4 @@
 {
-  "include": ["packages"],
+  "include": ["src"],
   "extends": "@ellreka/configs/tsconfig"
 }
