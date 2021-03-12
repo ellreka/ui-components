@@ -11,8 +11,10 @@ export default {
   title: '<%= Name %>'
 }
 
-const Template: Story<React.ComponentProps<typeof <%= Name %>>> = () => {
-  return <<%= Name %> />
+export const basic: Story<React.ComponentProps<typeof <%= Name %>>> = (args) => {
+  return <<%= Name %> {...args} />
 }
 
-export const Default = Template.bind({})
+basic.args = {
+
+}

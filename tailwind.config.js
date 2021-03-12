@@ -1,3 +1,9 @@
 module.exports = {
-  ...require('@ellreka/configs/tailwind.config.js')
+  presets: [require('@ellreka/configs/tailwind.config.js')],
+  theme: {
+    extend: {}
+  },
+  variants: {
+    extend: {}
+  }
 }
