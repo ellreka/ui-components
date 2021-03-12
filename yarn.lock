@@ -1043,7 +1043,7 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@ellreka/configs@^1.1.10":
+"@ellreka/configs@1.1.10":
   version "1.1.10"
   resolved "https://registry.yarnpkg.com/@ellreka/configs/-/configs-1.1.10.tgz#281721a88d0017ccc5631a2af06be335475c8457"
   integrity sha512-ABTkeCICkOvxEvbQ0Rfnyr2l/t6tbbD5E/Dt4J7RcqCEyx/z7N1VlIGDSfCc3LI3Bke8UZMjHtJv2idR9Fmmpg==
