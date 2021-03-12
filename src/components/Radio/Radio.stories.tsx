@@ -7,7 +7,7 @@ export default {
   title: 'Radio'
 }
 
-const Template = (): React.ReactElement => {
+export const hook = (): React.ReactElement => {
   const [active, setActive] = React.useState('B')
   return (
     <div>
@@ -26,5 +26,3 @@ const Template = (): React.ReactElement => {
     </div>
   )
 }
-
-export const hook = Template.bind({})
