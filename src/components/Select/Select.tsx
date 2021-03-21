@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import React from 'react'
 
-import { SelectProps, useSelect } from '.'
+import { SelectProps } from '.'
 
 export function Select({
   onChange,

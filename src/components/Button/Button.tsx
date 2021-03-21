@@ -15,11 +15,11 @@ export function Button({
   })
   const buttonClassNames = clsx(
     {
-      'bg-primary border-primary border border-solid text-white hover:bg-white hover:text-black focus:bg-white focus:text-black disabled:opacity-50':
+      'bg-blueGray-700 border-blueGray-700 border border-solid text-white hover:bg-white hover:text-black focus:bg-white focus:text-black disabled:opacity-50':
         color === 'primary'
     },
     {
-      'bg-secondary border-secondary text-black hover:bg-pink-300 focus:bg-pink-300 focus:ring-2 focus:ring-green-500 disabled:opacity-50':
+      'bg-pink-200 border-pink-200 text-black hover:bg-pink-300 focus:bg-pink-300 focus:ring-2 focus:ring-green-500 disabled:opacity-50':
         color === 'secondary'
     },
     'px-3 py-1 w-full text-center rounded-2xl shadow-xl',
