@@ -1257,10 +1257,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@ellreka/configs@1.1.10":
-  version "1.1.10"
-  resolved "https://registry.yarnpkg.com/@ellreka/configs/-/configs-1.1.10.tgz#281721a88d0017ccc5631a2af06be335475c8457"
-  integrity sha512-ABTkeCICkOvxEvbQ0Rfnyr2l/t6tbbD5E/Dt4J7RcqCEyx/z7N1VlIGDSfCc3LI3Bke8UZMjHtJv2idR9Fmmpg==
+"@ellreka/configs@1.1.12":
+  version "1.1.12"
+  resolved "https://registry.yarnpkg.com/@ellreka/configs/-/configs-1.1.12.tgz#f3eb5a867f72b2172613a55a81dd9c04911c0ede"
+  integrity sha512-542qGXAl7imhxhqAGclz1Sg9S2n+yEX38j3lF4uyNDYJtfFI5B5l6PNYto04QUcrN2+HNpkDM6ud+dROS6bXPQ==
   dependencies:
     "@typescript-eslint/eslint-plugin" "4"
     eslint-config-prettier "^6.11.0"
