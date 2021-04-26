@@ -18,7 +18,7 @@
     "@storybook/cli": "6.2.9",
     "@storybook/react": "6.2.9",
     "@tailwindcss/postcss7-compat": "2.1.2",
-    "@types/react": "17.0.3",
+    "@types/react": "17.0.4",
     "autoprefixer": "9.8.6",
     "clsx": "1.1.1",
     "css-loader": "5.2.4",
