@@ -17,7 +17,7 @@
     "@storybook/addon-essentials": "6.3.0",
     "@storybook/cli": "6.3.0",
     "@storybook/react": "6.3.0",
-    "@tailwindcss/postcss7-compat": "2.2.2",
+    "@tailwindcss/postcss7-compat": "2.2.4",
     "@types/react": "17.0.11",
     "autoprefixer": "9.8.6",
     "clsx": "1.1.1",
