@@ -2599,10 +2599,10 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@tailwindcss/postcss7-compat@2.2.5":
-  version "2.2.5"
-  resolved "https://registry.yarnpkg.com/@tailwindcss/postcss7-compat/-/postcss7-compat-2.2.5.tgz#9bc8205edc0d5c5a3e056e7cdccfdf12c0ad857d"
-  integrity sha512-+ZlWDRNwRSRMWD5GD/nDuNklrZhUAskSLjYsolu3P5PF2Dl8pnH4jo5vbf36HFbmSMJ7MorsLRhk6mG7sQOGyQ==
+"@tailwindcss/postcss7-compat@2.2.6":
+  version "2.2.6"
+  resolved "https://registry.yarnpkg.com/@tailwindcss/postcss7-compat/-/postcss7-compat-2.2.6.tgz#07824c7c91c711874418f0596ebae8c4765212cc"
+  integrity sha512-xrJqqVimKtNpyaaMapky3iFRCvEaA3PbdGG4HqHvyEdTLnfqKrRAv0znhqGeQlzFIL4P3w546cjWLYNtbvazFw==
   dependencies:
     arg "^5.0.0"
     autoprefixer "^9"
