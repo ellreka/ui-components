@@ -1576,10 +1576,10 @@
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.7.tgz#1d572bfbbe14b7704e0ba0f39b74815b84870d70"
   integrity sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==
 
-"@ellreka/configs@1.1.13":
-  version "1.1.13"
-  resolved "https://registry.yarnpkg.com/@ellreka/configs/-/configs-1.1.13.tgz#e4c3f4b67ccc379bcbd3358efb13307ed9b8c1b2"
-  integrity sha512-jq32YmD0eczvTWcGySCwEmGrHlUNS4OdDLWqMucoHWV056uiAilhzfKvItHihxyTLrMad+tGN94nPMWj8Kt2JQ==
+"@ellreka/configs@1.1.14":
+  version "1.1.14"
+  resolved "https://registry.yarnpkg.com/@ellreka/configs/-/configs-1.1.14.tgz#cd0d45b8257a2d1beafe158d6d0ca4498c7f127f"
+  integrity sha512-+Fr19I9N3esl7aLM6Tt1vj3RSxjLVWnMuSOQvcusH8uMVC/XkN4DvVbneUSqWXjOBWqx67E8abaW8qT9pwQd+A==
   dependencies:
     "@typescript-eslint/eslint-plugin" "5.20.0"
     "@typescript-eslint/parser" "^5.20.0"
